@@ -1,6 +1,6 @@
 <h1>Book Details</h1>
 
-    <table>
+    <table class="table-stripped">
         <tr>
             <td>Book Id</td>
             <td>{{book.id}}</td>
@@ -22,5 +22,5 @@
     <img src="{{book.retrievedImage}}" height="200" width="200">
     <br><br>
 
-    <a class="btn btn-small btn-warning" (click)="editBook()">edit</a>
-    <a class="btn btn-small btn-danger" (click)="deleteBook()">delete</a>
+    <a class="btn btn-small btn-success" style="margin-right: 20px;color: #ffffff;" (click)="editBook()">Edit</a>
+    <a class="btn btn-small btn-danger" style="color: #ffffff;" (click)="deleteBook()">Delete</a>
