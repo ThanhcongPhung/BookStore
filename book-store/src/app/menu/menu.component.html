@@ -10,10 +10,13 @@
                     Admin
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a routerLink="/admin/users" class="dropdown-item">Users</a>
-                    <a routerLink="/admin/books" class="dropdown-item">Books</a>
+                    <a  routerLink="/admin/users" class="dropdown-item">Users</a>
+                    <a  routerLink="/admin/books" class="dropdown-item">Books</a>
                 </div>
+
             </li>
+            <li><a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class="nav-link">Login</a></li>
+            <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/logout" class="nav-link">LogOut</a></li>
         </ul>
     </nav>
 </header>
