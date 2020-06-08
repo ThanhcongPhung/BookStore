@@ -3,10 +3,7 @@ package hust.soict.se.bookstore.controller;
 import hust.soict.se.bookstore.model.User;
 import hust.soict.se.bookstore.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,5 +17,16 @@ public class UserController {
     @GetMapping("/get")
     public List<User> getUsers() {
         return userRepository.findAll();
+    }
+    @PostMapping("/add")
+    public void createUser(@RequestBody User user) {
+        userRepository.save(user);
+    }
+
+    @DeleteMapping(path = { "/{id}" })
+    public User deleteUser(@PathVariable("id") long id) {
+        User user = userRepository.getOne(id);
+        userRepository.deleteById(id);
+        return user;
     }
 }
