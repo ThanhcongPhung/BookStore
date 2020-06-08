@@ -1,9 +1,21 @@
 <div class="container">
   <div>
-    User Name : <input type="text" name="username" [(ngModel)]="username">
-    Password : <input type="password" name="password" [(ngModel)]="password">
   </div>
-  <button (click)=checkLogin() class="btn btn-success">
-    Login
-  </button>
+  <div class="wrapper">
+    <form class="form-signin">       
+      <h2 class="form-signin-heading">Please login</h2>
+      <input type="text" class="form-control" name="username" placeholder="Username" [(ngModel)]="username" required="" autofocus="" />
+      <!-- User Name : <input type="text" name="username" [(ngModel)]="username"> -->
+      <!-- Password : <input type="password" name="password" [(ngModel)]="password"> -->
+      <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="password" required=""/>      
+      <label class="checkbox">
+        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
+      </label>
+      <button class="btn btn-lg btn-primary btn-block" (click)=checkLogin() type="submit">Login</button>   
+      <!-- <button (click)=checkLogin() class="btn btn-success"> -->
+    </form>
+  </div>
+
+    <!-- Login -->
+  <!-- </button> -->
 </div>
